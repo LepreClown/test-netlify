@@ -1,0 +1,33 @@
+.navigation {
+	@apply py-layout h-full;
+
+	@media (max-width: 1050px) {
+		@apply flex items-center h-full py-0;
+	}
+
+	> div:last-child {
+		@apply flex w-full justify-center absolute bottom-12;
+		@media (max-width: 1050px) {
+			@apply flex justify-end w-full px-layout absolute bottom-3;
+		}
+		@media (max-width: 500px) {
+			@apply px-6;
+		}
+		@media (max-width: 350px) {
+			@apply px-4;
+		}
+	}
+}
+
+.logo {
+	@apply flex justify-center px-layout mb-10  items-center;
+	@media (max-width: 1050px) {
+		display: none;
+	}
+	.text {
+		@apply tracking-[0.5em] text-5xl text-primary;
+	}
+	.text2 {
+		@apply text-primary text-5xl;
+	}
+}

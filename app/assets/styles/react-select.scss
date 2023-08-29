@@ -1,0 +1,117 @@
+/* React SelectRoles */
+// Определение переменных для светлой темы
+$light-primary-color: #007bff;
+$light-background-color: #f8f8f8;
+
+// Определение переменных для темной темы
+$dark-primary-color: #ffffff;
+$dark-background-color: #000000;
+
+.custom-select {
+	&__control {
+		background-color: transparent !important;
+		border: none !important;
+		border-radius: 0 !important;
+		border-bottom: 1px solid #66676e !important;
+		box-shadow: none !important;
+
+		&--menu-is-open {
+			border-color: #a6ce47 !important;
+		}
+	}
+
+	&__single-value {
+		@apply text-gray-950 dark:text-gray-500;
+	}
+
+	&__value-container {
+		padding: 0 !important;
+		cursor: text !important;
+	}
+
+	&__input-container {
+		@apply text-gray-950 dark:text-gray-500;
+	}
+
+	&__indicator-separator {
+		display: none !important;
+	}
+
+	&__indicators {
+		cursor: pointer !important;
+	}
+
+	&__indicator {
+		@apply text-gray-500 dark:text-gray-600;
+
+		&:hover {
+			@apply text-gray-950 dark:text-gray-500;
+		}
+	}
+
+	&__multi-value {
+		background-color: rgba(#999aa5, 0.6) !important;
+		border-radius: 0.5rem !important;
+	}
+
+	&__multi-value__label {
+		font-size: 80% !important;
+		color: rgba(white, 0.7) !important;
+	}
+
+	&__multi-value__remove {
+		color: rgba(white, 0.8) !important;
+
+		&:hover {
+			background-color: transparent !important;
+			color: rgba(white, 1) !important;
+		}
+	}
+
+	&__menu {
+		@apply bg-white dark:bg-gray-800 text-gray-950 dark:text-white;
+	}
+
+	&__option {
+		@apply transition-colors cursor-pointer;
+
+		&--is-focused {
+			cursor: pointer !important;
+			background-color: #999aa5 !important;
+		}
+	}
+
+	&__option--is-selected {
+		background-color: #a6ce47 !important;
+	}
+
+	&__option:hover {
+		@apply bg-gray-100 dark:bg-gray-700;
+	}
+
+	&-container {
+		> div {
+			outline: none !important;
+			box-shadow: none !important;
+		}
+
+		.form-control__control {
+			@apply outline-border-none transition-all;
+			border-color: #ced4da !important;
+			box-shadow: none !important;
+		}
+
+		&:hover,
+		&--menu-is-open {
+			border-color: #ced4da !important;
+		}
+
+		.form-control__indicators {
+			@apply cursor-pointer;
+		}
+	}
+
+	&__menu {
+		@apply animate-scaleIn;
+	}
+}

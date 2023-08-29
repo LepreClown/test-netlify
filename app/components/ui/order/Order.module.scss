@@ -1,0 +1,86 @@
+.gallery {
+	@apply grid grid-cols-2 gap-y-4 gap-x-12;
+
+	@media (max-width: 1420px) {
+		@apply grid-cols-1;
+	}
+}
+
+.item {
+	@apply flex relative  transition-all shadow-lg rounded-2xl overflow-hidden w-full;
+	flex: 0 0 auto;
+
+	&:hover {
+		transform: translateY(-5px);
+		@apply bg-gray-100 dark:bg-gray-800;
+	}
+
+	&.horizontal {
+		@apply h-full w-full;
+	}
+
+	&.withText {
+		&::before {
+			@apply rounded-layout;
+		}
+	}
+
+	.content {
+		@apply relative z-2 m-3 w-full;
+
+		div {
+			@apply mb-2;
+		}
+		.building {
+			@apply flex font-semibold text-2lg mb-4 text-primary dark:text-primary;
+			@media (max-width: 630px) {
+				@apply text-lg;
+			}
+		}
+
+		.params {
+			@apply flex text-[16px] text-gray-900 dark:text-gray-300 gap-6;
+
+			> div {
+				@apply flex flex-col font-semibold w-full;
+
+				.material {
+					@apply w-full whitespace-nowrap text-ellipsis overflow-x-hidden;
+					max-width: 90%;
+				}
+			}
+
+			@media (max-width: 630px) {
+				@apply text-[14px];
+			}
+		}
+
+		.footer {
+			@apply flex justify-between  text-[16px] w-full;
+
+			> div:first-child {
+				@apply text-gray-600 dark:text-gray-600;
+			}
+
+			> div:last-child {
+				@apply flex justify-end gap-12 text-gray-900 dark:text-gray-300 font-semibold pr-16;
+				> span:last-child {
+					@apply text-primary;
+				}
+				@media (max-width: 630px) {
+					@apply pr-0;
+				}
+			}
+			@media (max-width: 630px) {
+				@apply text-[14px];
+			}
+			@media (max-width: 500px) {
+				@apply text-[12px];
+			}
+
+			@media (max-width: 350px) {
+				@apply flex flex-col;
+			}
+		}
+	}
+}
